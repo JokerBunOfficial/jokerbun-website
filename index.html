@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080b0b">
+  <meta name="description" content="JokerBun ($JBUN) — wild bunny, crazy memes, Solana chaos. The rabbit is out of the cage!">
+  <title>JokerBun — The Rabbit Is Out of the Cage!</title>
+  <style>
+    :root{--bg: #090707;--panel: #160b0d;--green: #39ff72;--green2:#65ff80;--purple: #ff2638;--text:#f3f7ef;--muted:#a8b2aa;--line:rgba(182,255,56,.2)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(ellipse at 75% 5%,rgba(255,38,56,.17),transparent 34%),radial-gradient(ellipse at 10% 20%,rgba(182,255,56,.12),transparent 32%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.55}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+    header{display:flex;justify-content:space-between;align-items:center;padding:22px 0;gap:18px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:950;letter-spacing:.04em}
+    .brand-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--green),#67ffb5);color:#09100b;font-size:22px;box-shadow:0 0 28px #b6ff3833}
+    nav{display:flex;gap:22px;color:var(--muted);font-size:14px}
+    nav a:hover{color:var(--green)}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;padding:13px 18px;border-radius:12px;font-weight:850;border:1px solid var(--line);transition:transform .15s ease,filter .15s ease}
+    .btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+    .primary{background:var(--green);color:#081007;border-color:var(--green);box-shadow:0 8px 28px #b6ff3822}
+    .secondary{background:#ffffff08}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:42px;padding:64px 0 78px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--green);border:1px solid var(--line);background:#b6ff380b;padding:7px 12px;border-radius:999px;font-size:12px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+    h1{font-size:clamp(44px,7vw,78px);line-height:.98;letter-spacing:-.065em;margin:22px 0}
+    h1 span{color:var(--green);text-shadow:0 0 32px #b6ff3827}
+    .lead{max-width:560px;color:#c1cbc2;font-size:18px}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 18px}
+    .fine{font-size:12px;color:#829087}
+    .visual{position:relative;min-height:410px;display:grid;place-items:center}
+    .orb{position:absolute;width:min(390px,90%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 38% 35%,#b6ff3830,transparent 43%),radial-gradient(circle at 70% 70%,#ff263833,transparent 46%);border:1px solid #b6ff3826;box-shadow:inset 0 0 65px #ff263814,0 0 90px #ff263810}
+    .mascot-card{z-index:1;position:relative;width:min(330px,85%);aspect-ratio:4/4.6;border:1px solid #b6ff3840;border-radius:26px;background:linear-gradient(145deg,#18201b,#100e18);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 25px 80px #0009,0 0 45px #b6ff3812}
+    .mascot-card:before,.mascot-card:after{content:"";position:absolute;width:230px;height:230px;border:1px solid #b6ff3829;transform:rotate(35deg);border-radius:28px}
+    .mascot-card:after{width:170px;height:170px;border-color:#ff263847;transform:rotate(60deg)}
+    .mascot-inner{position:relative;z-index:2;text-align:center;padding:24px}
+    .mascot-symbol{font-size:70px;line-height:1;filter:drop-shadow(0 0 20px #b6ff3833)}
+    .mascot-inner strong{display:block;color:var(--green);font-size:22px;letter-spacing:.1em;margin-top:14px}
+    .mascot-inner p{color:var(--muted);font-size:12px;margin:8px 0 0}
+    .float{position:absolute;z-index:3;border:1px solid #ffffff20;background:#0e1412eF;padding:10px 13px;border-radius:12px;font-size:12px;font-weight:900;box-shadow:0 12px 30px #0005}
+    .float.one{top:14%;left:-2%;color:var(--green);transform:rotate(-7deg)}
+    .float.two{bottom:13%;right:-1%;color:#d6a7ff;transform:rotate(6deg)}
+    section{padding:64px 0}
+    .section-head{max-width:650px;margin-bottom:28px}
+    .kicker{color:var(--green);font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+    h2{font-size:clamp(30px,4vw,46px);line-height:1.06;letter-spacing:-.04em;margin:10px 0 14px}
+    .sub{color:var(--muted);margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{border:1px solid #ffffff13;background:linear-gradient(145deg,#ffffff08,#ffffff03);border-radius:18px;padding:23px}
+    .card .emoji{font-size:26px}
+    .card h3{margin:12px 0 7px;font-size:18px}
+    .card p{color:var(--muted);font-size:14px;margin:0}
+    .community{border:1px solid var(--line);background:linear-gradient(120deg,#b6ff3810,#ff263812);border-radius:24px;padding:clamp(24px,5vw,48px);display:flex;justify-content:space-between;align-items:center;gap:24px}
+    .community p{color:var(--muted);max-width:600px}
+    .token{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+    .chart-frame{width:100%;height:560px;border:1px solid rgba(182,255,56,.25);border-radius:18px;background:#0b0e0d;overflow:hidden;box-shadow:0 15px 55px #0007}
+    .chart-frame iframe{display:block;width:100%;height:100%;border:0}\n    .copy:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offset:4px}\n    .card{height:100%}
+    .chart-note{color:var(--muted);font-size:12px;margin-top:12px}
+    .token-item{padding:15px;border:1px solid #ffffff12;background:#ffffff05;border-radius:12px;min-width:0}
+    .token-item small{display:block;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+    .token-item strong{display:block;font-size:13px;overflow-wrap:anywhere;margin-top:6px}
+    .copy{background:transparent;color:var(--green);border:0;padding:0;cursor:pointer;font:inherit;font-weight:800}
+    footer{border-top:1px solid #ffffff12;padding:25px 0 35px;color:#89958c;font-size:12px}
+    .footer-row{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .disclaimer{max-width:800px;margin-top:16px}
+    @media(max-width:780px){header{flex-wrap:wrap}nav{display:flex;order:3;width:100%;overflow-x:auto;gap:16px;padding:8px 0;white-space:nowrap}nav a{flex:0 0 auto}.hero{grid-template-columns:1fr;padding:44px 0 54px;gap:18px}.visual{min-height:350px}.grid{grid-template-columns:1fr}.community{align-items:flex-start;flex-direction:column}.token{grid-template-columns:1fr}.float.one{left:0}.float.two{right:0}}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <a class="brand" href="#top" aria-label="JokerBun home"><span class="brand-mark">🐰</span><span>JOKERBUN</span></a>
+    <nav aria-label="Main navigation"><a href="#about">About</a><a href="#memes">Memes</a><a href="#chart">Live Chart</a><a href="#token">Token</a><a href="#roadmap">Roadmap</a><a href="#faq">FAQ</a><a href="#community">Community</a></nav>
+    <a class="btn secondary" href="https://x.com/JokerBuniou0" target="_blank" rel="noopener noreferrer">Follow on X ↗</a>
+  </header>
+  <main id="top">
+    <div class="wrap hero">
+      <div>
+        <div class="eyebrow">● Solana meme community</div>
+        <h1>THE RABBIT IS<br><span>OUT OF THE CAGE!</span></h1>
+        <p class="lead">Wild bunny. Crazy memes. Solana chaos. Meet JokerBun — a meme project built around an original rabbit mascot and a community that grows one meme at a time.</p>
+        <div class="actions">
+          <a class="btn primary" href="https://pump.fun/coin/HnK2zKibdcDpDFpAw2wjc2ZC5Vt1dkhE3uXAbASLpump" target="_blank" rel="noopener noreferrer">Explore $JBUN ↗</a>
+          <a class="btn secondary" href="https://t.me/+19kF2u7iSwQ4NTFk" target="_blank" rel="noopener noreferrer">Join Telegram ↗</a>
+        </div>
+        <div class="fine">One bunny. One community. Endless memes.</div>
+      </div>
+      <div class="visual" aria-label="JokerBun mascot artwork placeholder">
+        <div class="orb"></div>
+        <div class="float one">WILD BUNNY 🥊</div>
+        <div class="mascot-card" style="background:#050505;">
+          <img src="jokerbun-mascot.jpg" alt="Original JokerBun rabbit mascot" style="width:100%;height:100%;object-fit:contain;position:relative;z-index:2;border-radius:26px;">
+        </div>
+        <div class="float two">CRAZY MEMES 💚</div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">Meet the bunny</div><h2>Memes first. Community always.</h2><p class="sub">JokerBun brings a playful rabbit identity to Solana's meme culture. We're here to create, share laughs, and build a recognizable community step by step.</p></div>
+        <div class="grid">
+          <article class="card"><div class="emoji">🐰</div><h3>Original mascot</h3><p>A wild white rabbit with a mischievous attitude — the face of the JokerBun brand.</p></article>
+          <article class="card"><div class="emoji">😂</div><h3>Crazy memes</h3><p>Shareable, community-led content with the unmistakable JokerBun vibe.</p></article>
+          <article class="card"><div class="emoji">💚</div><h3>Real community</h3><p>We value genuine participation, creativity, and people who enjoy the journey.</p></article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="memes">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">Meme corner</div><h2>Make the bunny go viral.</h2><p class="sub">The community makes JokerBun fun. Share your own memes and follow the official channels for new posts. This section is ready for original community artwork as it becomes available.</p></div>
+        <div class="grid">
+          <article class="card"><div class="emoji">🐰</div><h3>Bunny energy</h3><p>Big grin. Wild energy. Always unmistakably JokerBun.</p></article>
+          <article class="card"><div class="emoji">🥊</div><h3>Into the chaos</h3><p>Make a meme, share a laugh, and tag the community.</p></article>
+          <article class="card"><div class="emoji">💚</div><h3>Your turn</h3><p>Join Telegram or X to share community creations.</p></article>
+        </div>
+      </div>
+    </section>
+\n    <section id="community">
+      <div class="wrap">
+        <div class="community">
+          <div><div class="kicker">Join the chaos</div><h2>Come meet the community.</h2><p>Follow JokerBun on X and join the Telegram chat to share memes, meet other community members, and follow project updates.</p></div>
+          <div class="actions">
+            <a class="btn primary" href="https://t.me/+19kF2u7iSwQ4NTFk" target="_blank" rel="noopener noreferrer">Join Telegram ↗</a>
+            <a class="btn secondary" href="https://x.com/JokerBuniou0" target="_blank" rel="noopener noreferrer">Follow X ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="chart">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">Live market chart</div><h2>$JBUN in real time.</h2><p class="sub">Live market data provided by DEX Screener. Prices and liquidity can change quickly.</p></div>
+        <div class="chart-frame">
+          <iframe title="JokerBun live market chart on DEX Screener" loading="lazy" src="https://dexscreener.com/solana/HnK2zKibdcDpDFpAw2wjc2ZC5Vt1dkhE3uXAbASLpump?embed=1&theme=dark&trades=0&info=0" allow="clipboard-write" referrerpolicy="no-referrer"></iframe>
+        </div>
+        <p class="chart-note">If the embedded chart does not load, <a href="https://dexscreener.com/solana/HnK2zKibdcDpDFpAw2wjc2ZC5Vt1dkhE3uXAbASLpump" target="_blank" rel="noopener noreferrer" style="color:var(--green);text-decoration:underline">open $JBUN on DEX Screener ↗</a>.</p>
+      </div>
+    </section>
+
+    <section id="token">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">Official token links</div><h2>Check the details yourself.</h2><p class="sub">Always verify token information independently before making a decision.</p></div>
+        <div class="token">
+          <div class="token-item"><small>Network</small><strong>Solana</strong></div>
+          <div class="token-item"><small>Ticker used by this website</small><strong>$JBUN</strong></div>
+          <div class="token-item"><small>Contract address</small><strong id="ca">HnK2zKibdcDpDFpAw2wjc2ZC5Vt1dkhE3uXAbASLpump</strong><button class="copy" id="copyCA" type="button">Copy address</button></div>
+          <div class="token-item"><small>Buy / token page</small><strong><a href="https://pump.fun/coin/HnK2zKibdcDpDFpAw2wjc2ZC5Vt1dkhE3uXAbASLpump" target="_blank" rel="noopener noreferrer">Open Pump.fun ↗</a></strong></div>
+          <div class="token-item"><small>Live chart</small><strong><a href="https://dexscreener.com/solana/HnK2zKibdcDpDFpAw2wjc2ZC5Vt1dkhE3uXAbASLpump" target="_blank" rel="noopener noreferrer">Open DEX Screener ↗</a></strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">Roadmap</div><h2>One step at a time.</h2><p class="sub">We will keep plans realistic and share progress openly. These are community priorities, not guarantees of delivery or token performance.</p></div>
+        <div class="grid">
+          <article class="card"><div class="emoji">①</div><h3>Build the base</h3><p>Publish the official website, make core links easy to verify, and keep the community channels active.</p></article>
+          <article class="card"><div class="emoji">②</div><h3>Create together</h3><p>Grow a library of original memes and encourage community-made content around the existing mascot.</p></article>
+          <article class="card"><div class="emoji">③</div><h3>Improve transparently</h3><p>Share genuine project updates and consider future improvements based on community feedback and available resources.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <div class="section-head"><div class="kicker">FAQ</div><h2>New to JokerBun?</h2><p class="sub">A few quick answers before you join the community.</p></div>
+        <div class="grid">
+          <article class="card"><h3>Where can I find $JBUN?</h3><p>Use the official Pump.fun and DEX Screener links on this page, and verify the contract address before any transaction.</p></article>
+          <article class="card"><h3>Is profit guaranteed?</h3><p>No. $JBUN is a memecoin and may be extremely volatile. You can lose some or all of the money you put in.</p></article>
+          <article class="card"><h3>How do I join in?</h3><p>Join the Telegram community, follow the official X account, and share original memes respectfully.</p></article>
+        </div>
+      </div>
+    </section>
+\n  </main>
+  <footer>
+    <div class="wrap">
+      <div class="footer-row"><strong>🐰 JOKERBUN</strong><span>Wild bunny. Crazy memes. Solana chaos.</span><span><a href="https://t.me/+19kF2u7iSwQ4NTFk" target="_blank" rel="noopener noreferrer">Telegram</a> · <a href="https://x.com/JokerBuniou0" target="_blank" rel="noopener noreferrer">X</a></span></div>
+      <p class="disclaimer">Risk notice: Memecoins are highly speculative and can lose most or all of their value. This website is for community and informational purposes only and does not promise profits or provide financial advice. Do your own research (DYOR).</p>
+    </div>
+  </footer>
+  <script>
+    const button = document.getElementById('copyCA');
+    button.addEventListener('click', async () => {
+      const ca = document.getElementById('ca').textContent.trim();
+      try {
+        await navigator.clipboard.writeText(ca);
+        button.textContent = 'Copied!';
+      } catch {
+        button.textContent = ca;
+      }
+    });
+  </script>
+</body>
+</html>
